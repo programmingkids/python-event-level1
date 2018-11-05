@@ -4,7 +4,7 @@ import tkinter
 root = tkinter.Tk()
 
 # タイトルを設定する
-root.title("サンプル10")
+root.title()
 # ウィンドウのサイズの設定
 root.geometry("896x640")
 # ウィンドウの最小サイズの設定（このサイズより小さくなりません）
@@ -29,8 +29,8 @@ images = [
 ]
 
 # リスト内の画像をキャンバスに表示します
-for i in range(len(images)):
-    canvas.create_image(32 + i * 64, 32, image=images[i])
+
+
 
 # 画面を表示します
 root.mainloop()
