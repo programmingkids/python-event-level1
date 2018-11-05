@@ -21,8 +21,7 @@ canvas.place(x=0, y=0)
 image = tkinter.PhotoImage(file="../images/robot.png")
 # 画像をキャンバスに表示します
 
-for y in range(10):
-    canvas.create_image(32, 32 + y * 64, image=image)
+
 
 # 画面を表示します
 root.mainloop()
