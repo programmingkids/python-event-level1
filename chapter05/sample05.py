@@ -2,32 +2,8 @@ import tkinter
 
 
 def talk():
-    # 入力ボックスの文字を取得
-    value = entry.get()
-    if not value:
-        # 何も入力されていない場合
-        value = "python >  なに?"
-        # 表示ボックスに書き込み
-        listbox.insert(tkinter.END, value)
-    else:
-        # 表示ボックスに書き込み
-        listbox.insert(tkinter.END, value)
-        # pythonによる自動レスポンス
-        response = "python >  "
-        if value == "おはよう":
-            response += "おはよう。今日も頑張ろう"
-        elif value == "こんにちは":
-            response += "元気ですか？"
-        elif value == "元気です":
-            response += "よかった"
-        else :
-            response = "なんだかな～"
-        # 表示ボックスに書き込み
-        listbox.insert(tkinter.END, response)
-    # 入力ボックスを空にします
-    entry.delete(0,tkinter.END)
-    # 表示エリアを一番下にスクロール
-    listbox.yview('moveto', 1.0)
+
+
 
 
 # tkinterを初期化する
