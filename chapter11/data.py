@@ -37,7 +37,7 @@ def get_map():
 
 def get_monster():
     monster_data = [
-        monster.Monster("海賊", 30, 10, tkinter.PhotoImage(file="../images/robot4.png"), [12, 8], 7),
+        monster.Monster("海賊A", 30, 10, tkinter.PhotoImage(file="../images/robot4.png"), [12, 8], 7),
         monster.Monster("スライムB", 10, 2, tkinter.PhotoImage(file="../images/enemy01.png"), [11, 5], 4),
         monster.Monster("スライムC", 10, 2, tkinter.PhotoImage(file="../images/enemy01.png"), [11, 3], 4),
         monster.Monster("毒蛇", 15, 5, tkinter.PhotoImage(file="../images/enemy02.png"), [10, 8], 5),
@@ -48,9 +48,9 @@ def get_monster():
         monster.Monster("悪魔の騎士", 15, 12, tkinter.PhotoImage(file="../images/enemy05.png"), [1, 5], 15),
         monster.Monster("ドラゴン", 40, 15, tkinter.PhotoImage(file="../images/enemy06.png"), [0, 0], 18),
         monster.Monster("カエル", 10, 5, tkinter.PhotoImage(file="../images/robot3.png"), [9, 2], 5),
-        monster.Monster("海賊", 10, 5, tkinter.PhotoImage(file="../images/robot4.png"), [9, 3], 7),
+        monster.Monster("海賊B", 10, 5, tkinter.PhotoImage(file="../images/robot4.png"), [9, 3], 7),
         monster.Monster("忍者", 20, 10, tkinter.PhotoImage(file="../images/robot5.png"), [9, 4], 7),
-        monster.Monster("サムライ", 30, 10, tkinter.PhotoImage(file="../images/robot6.png"), [9, 5], 10),
+        monster.Monster("サムライ", 30, 10, tkinter.PhotoImage(file="../images/robot6.png"), [6, 5], 10),
         monster.Monster("サンダー", 30, 15, tkinter.PhotoImage(file="../images/robot7.png"), [9, 6], 10),
         monster.Monster("緑竜", 40, 20, tkinter.PhotoImage(file="../images/robot9.png"), [9, 7], 15),
     ]
