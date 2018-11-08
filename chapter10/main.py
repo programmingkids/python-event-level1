@@ -1,8 +1,8 @@
-import tkinter
-import chapter10.player as player
-import chapter10.data as data
-import chapter10.fight as fight
-import tkinter.messagebox
+from chapter10.player import *
+from chapter10.data import *
+from chapter10.fight import *
+from tkinter import *
+from tkinter import messagebox
 
 
 def draw_map():
@@ -107,7 +107,7 @@ def fight_end(status, monster):
     elif status == "lost":
         # 戦闘に負けた場合、メッセージを出す
         message = player.name + "は負けました"
-        tkinter.messagebox.showwarning("ゲームオーバー", message)
+        messagebox.showwarning("ゲームオーバー", message)
         # ウィンドウを終了
         root.quit()
 
@@ -115,7 +115,7 @@ def fight_end(status, monster):
     if not monster_data:
         # 全てのモンスターを倒したのでゲームクリア
         message = player.name + "は全てのモンスターを倒しました"
-        tkinter.messagebox.showinfo("おめでとう", message)
+        messagebox.showinfo("おめでとう", message)
 
 
 # ウィンドウの座標幅
@@ -126,7 +126,7 @@ WINDOW_WIDTH = 896
 WINDOW_HEIGHT = 640
 
 # tkinterを初期化する
-root = tkinter.Tk()
+root = Tk()
 # タイトルを設定する
 root.title("RPG")
 # ウィンドウのサイズの設定
@@ -137,7 +137,7 @@ root.minsize(WINDOW_WIDTH, WINDOW_HEIGHT)
 root.maxsize(WINDOW_WIDTH, WINDOW_HEIGHT)
 
 # キーボードイベントを登録する
-frame = tkinter.Frame(root, width=WINDOW_WIDTH, height=WINDOW_HEIGHT)
+frame = Frame(root, width=WINDOW_WIDTH, height=WINDOW_HEIGHT)
 frame.bind("<Up>", click_up_event)
 frame.bind("<Down>", click_down_event)
 frame.bind("<Left>", click_left_event)
@@ -146,19 +146,19 @@ frame.focus_set()
 frame.pack()
 
 # キャンバスを作成 背景色は「白」、幅と高さはウィンドウと同じサイズにする
-canvas = tkinter.Canvas(bg="white",width=WINDOW_WIDTH, height=WINDOW_HEIGHT)
+canvas = Canvas(bg="white",width=WINDOW_WIDTH, height=WINDOW_HEIGHT)
 # キャンバスをウィンドウに配置
 canvas.place(x=0, y=0)
 
 # マップ画像を読み込みます
-map_images = data.get_map_images()
-map_data = data.get_map()
+map_images = get_map_images()
+map_data = get_map()
 
 # プレイヤ画像を読み込み
-player = player.Player("パイソン", 30, 10, tkinter.PhotoImage(file="../images/chara01.png"), [13, 9])
+player = Player("パイソン", 30, 10, PhotoImage(file="../images/chara01.png"), [13, 9])
 
 # モンスターデータを読み込み
-monster_data = data.get_monster()
+monster_data = get_monster()
 
 # マップの初期表示
 draw_map()
@@ -167,7 +167,7 @@ draw_player()
 # モンスター画像の初期表示
 draw_monster()
 # 戦闘画面の初期化
-fight = fight.Fight(WINDOW_WIDTH, WINDOW_HEIGHT)
+fight = Fight(WINDOW_WIDTH, WINDOW_HEIGHT)
 
 # 画面を表示します
 root.mainloop()
