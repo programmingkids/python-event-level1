@@ -17,7 +17,7 @@ class Fight:
         top_frame.pack(side=tkinter.TOP,fill=tkinter.X, padx=30,pady=40)
 
         # メッセージボックス
-        self.listbox = tkinter.Listbox(top_frame, width=50, height=20)
+        self.listbox = tkinter.Listbox(top_frame, width=40, height=20)
 
         # メッセージボックスにスクロールバーを表示する
         scrollbar = tkinter.Scrollbar(top_frame, orient=tkinter.VERTICAL)
