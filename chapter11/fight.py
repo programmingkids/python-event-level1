@@ -7,6 +7,8 @@ class Fight:
     def __init__(self, width, height):
         self.width = width
         self.height = height
+
+    def create_frame(self):
         # メインフレームの作成
         self.main_frame = tkinter.Frame()
         self.main_frame.place(x=0, y=0, width=self.width, height=self.height)
@@ -15,7 +17,7 @@ class Fight:
         top_frame.pack(side=tkinter.TOP,fill=tkinter.X, padx=30,pady=40)
 
         # メッセージボックス
-        self.listbox = tkinter.Listbox(top_frame, width=50, height=20)
+        self.listbox = tkinter.Listbox(top_frame, width=40, height=20)
 
         # メッセージボックスにスクロールバーを表示する
         scrollbar = tkinter.Scrollbar(top_frame, orient=tkinter.VERTICAL)
@@ -93,10 +95,9 @@ class Fight:
         self.button_escape.pack( side=tkinter.LEFT, padx=20, pady=20)
         self.button_escape["command"] = self.escape
 
-        # 最初は戦闘画面は表示しない
-        self.main_frame.place_forget()
-
     def start(self, player, monster, fight_end):
+        # フレームを作成
+        self.create_frame()
         # プレイヤを表示
         self.player = player
         self.player_image = self.player.image.zoom(2)
@@ -156,6 +157,7 @@ class Fight:
             self.add_message(self.player.name + "は負けた")
             self.close_main_frame()
             self.fight_end("lost", self.monster)
+            return
         self.add_message("===========")
         self.normal_button()
 
@@ -174,6 +176,7 @@ class Fight:
             self.add_message(self.player.name + "は負けた")
             self.close_main_frame()
             self.fight_end("lost", self.monster)
+            return
         self.add_message("===========")
         self.normal_button()
 
@@ -189,7 +192,7 @@ class Fight:
         self.main_frame.update()
         time.sleep(2)
         self.listbox.delete(0, tkinter.END)
-        self.main_frame.place_forget()
+        self.main_frame.destroy()
 
     def add_message(self, message):
         self.listbox.insert(tkinter.END, message)
