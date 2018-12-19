@@ -1,5 +1,5 @@
 from tkinter import PhotoImage
-from chapter11.monster import Monster
+from chapter11complete.monster import Monster
 
 
 def get_map_images():

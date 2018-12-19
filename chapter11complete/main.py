@@ -1,6 +1,6 @@
-from chapter11.player import *
-from chapter11.data import *
-from chapter11.fight import *
+from chapter11complete.player import *
+from chapter11complete.data import *
+from chapter11complete.fight import *
 from tkinter import *
 from tkinter import messagebox
 
