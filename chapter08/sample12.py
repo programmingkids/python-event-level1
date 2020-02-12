@@ -6,7 +6,7 @@ import tkinter
 root = tkinter.Tk()
 
 # タイトルを設定する
-root.title()
+
 # ウィンドウのサイズの設定
 root.geometry("896x640")
 # ウィンドウの最小サイズの設定（このサイズより小さくなりません）
