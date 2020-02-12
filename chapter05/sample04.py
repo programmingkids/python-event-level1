@@ -18,7 +18,7 @@ def add():
 root = tkinter.Tk()
 
 # タイトルを設定する
-root.title()
+
 # ウィンドウのサイズの設定
 root.geometry("500x400")
 # ウィンドウの最小サイズの設定（このサイズより小さくなりません）
